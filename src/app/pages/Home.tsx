@@ -46,8 +46,8 @@ const services = [
 
 const testimonials = [
   {
-    name: 'Michael T.',
-    location: 'Joondalup, WA',
+    name: 'Ganesh G.',
+    location: 'Shelly, WA',
     rating: 5,
     text: 'AJSV Construction built our new home from the ground up. The team was professional, communicative, and delivered exceptional quality. Highly recommend to any family looking for a reliable builder in Perth.',
   },
@@ -398,7 +398,7 @@ export default function Home() {
               Request a Free Quote <ArrowRight className="h-4 w-4" />
             </Link>
             <a
-              href="tel:0400000000"
+              href="tel:0401121266"
               className="inline-flex items-center justify-center gap-2 bg-[#1a3468] text-white px-8 py-4 rounded hover:bg-[#243d7a] transition-colors"
               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
             >

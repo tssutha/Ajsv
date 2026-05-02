@@ -1,7 +1,7 @@
 
-  # Landing page for construction business
+  # AJSV
 
-  This is a code bundle for Landing page for construction business. The original project is available at https://www.figma.com/design/42SsHfrNKoSowrytx3kEAY/Landing-page-for-construction-business.
+  This is a code bundle for AJSV. The original project is available at https://www.figma.com/design/42SsHfrNKoSowrytx3kEAY/AJSV.
 
   ## Running the code
 

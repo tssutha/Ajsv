@@ -8,14 +8,14 @@ const contactInfo = [
   {
     icon: <Phone className="h-6 w-6 text-[#e07320]" />,
     title: 'Phone',
-    lines: ['0400 000 000'],
-    link: 'tel:0400000000',
+    lines: ['0401 121 266'],
+    link: 'tel:0401121266',
   },
   {
     icon: <MessageCircle className="h-6 w-6 text-[#e07320]" />,
     title: 'WhatsApp',
-    lines: ['0400 000 000'],
-    link: 'https://wa.me/61400000000',
+    lines: ['0401 121 266'],
+    link: 'https://wa.me/61401121266',
   },
   {
     icon: <Mail className="h-6 w-6 text-[#e07320]" />,
@@ -39,6 +39,8 @@ const contactInfo = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -47,10 +49,43 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, connect to a backend or form service
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/tssutha@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          service: form.service,
+          message: form.message,
+          _subject: `New Quote Request – ${form.service} – ${form.name}`,
+          _captcha: 'false',
+          _template: 'table',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success === 'true' || data.success === true) {
+        setSubmitted(true);
+        setForm({ name: '', email: '', phone: '', service: 'Housing – New Home', message: '' });
+      } else {
+        setError('Something went wrong. Please try again or call us directly.');
+      }
+    } catch {
+      setError('Unable to send your message. Please check your connection and try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -144,14 +179,14 @@ export default function Contact() {
               {/* Quick action buttons */}
               <div className="space-y-3">
                 <a
-                  href="tel:0400000000"
+                  href="tel:0401121266"
                   className="flex items-center justify-center gap-2 bg-[#e07320] text-white py-3 px-6 rounded hover:bg-[#c9661a] transition-colors w-full"
                   style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
                 >
                   <Phone className="h-4 w-4" /> Call Now
                 </a>
                 <a
-                  href="https://wa.me/61400000000?text=Hi%20AJSV%20Construction!%20I%20would%20like%20a%20quote."
+                  href="https://wa.me/61401121266?text=Hi%20AJSV%20Construction!%20I%20would%20like%20a%20quote."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 px-6 rounded hover:bg-[#1ebe5a] transition-colors w-full"
@@ -322,11 +357,17 @@ export default function Contact() {
 
                       <button
                         type="submit"
-                        className="w-full bg-[#e07320] text-white py-4 rounded-lg hover:bg-[#c9661a] transition-colors"
+                        disabled={loading}
+                        className="w-full bg-[#e07320] text-white py-4 rounded-lg hover:bg-[#c9661a] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                         style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
                       >
-                        Request Free Quote
+                        {loading ? 'Sending...' : 'Request Free Quote'}
                       </button>
+                      {error && (
+                        <p className="text-red-500 text-sm text-center" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                          {error}
+                        </p>
+                      )}
                       <p className="text-gray-400 text-xs text-center" style={{ fontFamily: 'Open Sans, sans-serif' }}>
                         We respond within 1 business day. No spam, ever.
                       </p>

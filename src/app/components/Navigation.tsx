@@ -61,12 +61,12 @@ export function Navigation() {
           {/* CTA + Phone */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:0400000000"
+              href="tel:0401121266"
               className="flex items-center gap-2 text-[#1a3468] hover:text-[#e07320] transition-colors"
               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}
             >
               <Phone className="h-4 w-4" />
-              <span className="text-sm">0400 000 000</span>
+              <span className="text-sm">0401 121 266</span>
             </a>
             <Link
               to="/contact"
@@ -108,12 +108,12 @@ export function Navigation() {
             ))}
             <div className="pt-3 space-y-2">
               <a
-                href="tel:0400000000"
+                href="tel:0401121266"
                 className="flex items-center gap-2 py-3 px-3 text-[#1a3468] text-sm"
                 style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 600 }}
               >
                 <Phone className="h-4 w-4 text-[#e07320]" />
-                Call: 0400 000 000
+                Call: 0401 121 266
               </a>
               <Link
                 to="/contact"

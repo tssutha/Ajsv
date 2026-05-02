@@ -18,7 +18,7 @@ export function Footer() {
           </div>
           <div className="flex gap-3">
             <a
-              href="tel:0400000000"
+              href="tel:0401121266"
               className="bg-white text-[#e07320] px-6 py-2.5 rounded text-sm hover:bg-gray-100 transition-colors"
               style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 700 }}
             >
@@ -124,8 +124,8 @@ export function Footer() {
                 <li className="flex items-start gap-3">
                   <Phone className="h-4 w-4 text-[#e07320] mt-0.5 flex-shrink-0" />
                   <div>
-                    <a href="tel:0400000000" className="text-gray-400 hover:text-white text-sm transition-colors" style={{ fontFamily: 'Open Sans, sans-serif' }}>
-                      0400 000 000
+                    <a href="tel:0401121266" className="text-gray-400 hover:text-white text-sm transition-colors" style={{ fontFamily: 'Open Sans, sans-serif' }}>
+                      0401 121 266
                     </a>
                   </div>
                 </li>
@@ -150,7 +150,7 @@ export function Footer() {
           {/* Bottom bar */}
           <div className="mt-12 pt-6 border-t border-[#1a3468] flex flex-col md:flex-row justify-between items-center gap-3">
             <p className="text-gray-500 text-xs" style={{ fontFamily: 'Open Sans, sans-serif' }}>
-              © 2026 AJSV Construction Pty Ltd. All rights reserved. ABN: XX XXX XXX XXX
+              © 2026 AJSV Construction Pty Ltd. All rights reserved. ACN: 690 431 951
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-gray-500 hover:text-gray-400 text-xs transition-colors" style={{ fontFamily: 'Open Sans, sans-serif' }}>Privacy Policy</a>

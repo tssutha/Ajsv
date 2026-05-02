@@ -1,7 +1,7 @@
 import { Phone, MessageCircle } from 'lucide-react';
 
 export function FloatingCTA() {
-  const whatsappNumber = '61400000000';
+  const whatsappNumber = '61401121266';
   const whatsappMessage = encodeURIComponent('Hi AJSV Construction! I would like to get a quote for my project.');
 
   return (
@@ -25,7 +25,7 @@ export function FloatingCTA() {
 
       {/* Call Button */}
       <a
-        href="tel:0400000000"
+        href="tel:0401121266"
         className="flex items-center gap-2 bg-[#e07320] text-white px-4 py-3 rounded-full shadow-lg hover:bg-[#c9661a] transition-all hover:scale-105"
         aria-label="Call Now"
       >
