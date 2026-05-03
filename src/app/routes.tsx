@@ -6,7 +6,8 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter(
+  [
   {
     path: '/',
     Component: Root,
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { path: 'about', Component: About },
       { path: 'projects', Component: Projects },
       { path: 'contact', Component: Contact },
-    ],
+    ]
   },
-]);
+]
+);
